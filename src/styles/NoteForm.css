@@ -1,0 +1,41 @@
+.note-form{
+    background-color: #fff9e6;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.note-form textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    background: transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+    font-family: inherit;
+}
+
+.note-footer {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.note-form button {
+    background-color: #4a90e2;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.note-form button:hover {
+    background-color: #357ab8;
+}
