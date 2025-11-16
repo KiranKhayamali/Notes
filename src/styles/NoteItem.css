@@ -96,3 +96,29 @@
 .delete-btn:hover {
     background-color: #d9363e;
 }
+
+.pin-btn {
+  background: #ffbf00;
+  color: black;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pin-btn:hover {
+  background: #e0a800;
+}
+
+.pinned {
+  border: 2px solid #ffbf00;
+  position: relative;
+}
+
+.pinned::after {
+  content: "📌";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 16px;
+}
