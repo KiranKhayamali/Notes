@@ -33,12 +33,20 @@ function App() {
     note.text.toLowerCase().includes(searchText.toLowerCase())
   );
 
+  const editNote = (id, newText) => {
+    setNotes(
+      notes.map((note) =>
+        note.id === id ? { ...note, text: newText } : note
+      )
+    );
+  };
+
   return (
     <div className="app-container">
       <h1 className='app-title'>Notes App</h1>
       <SearchBar handleSearch={setSearchText} />
       <NoteForm onAddNote={addNote} />
-      <NoteList notes={filteredNotes} handleDeleteNote={deleteNote} />
+      <NoteList notes={filteredNotes} handleDeleteNote={deleteNote} handleEditNote={editNote}/>
     </div>
   );
 }
