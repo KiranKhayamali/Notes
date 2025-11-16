@@ -1,4 +1,5 @@
 import NoteItem from "./NoteItem";
+import '../styles/NoteList.css';
 
 export default function NoteList({notes, handleDeleteNote}) {
     return (
