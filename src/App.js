@@ -21,6 +21,7 @@ function App() {
       id: uuidv4(),
       text: text,
       color: color,
+      isPinned: false,
       date: new Date().toLocaleDateString()
     };
     setNotes([newNote, ...notes]);
@@ -29,11 +30,7 @@ function App() {
   const deleteNote = (id) => {
     setNotes(notes.filter((note) => note.id !== id));
   };
-
-  const filteredNotes = notes.filter((note) =>
-    note.text.toLowerCase().includes(searchText.toLowerCase())
-  );
-
+  
   const editNote = (id, newText) => {
     setNotes(
       notes.map((note) =>
@@ -42,12 +39,33 @@ function App() {
     );
   };
 
+  const togglePinNote = (id) => {
+    setNotes(
+      notes.map((note) =>
+        note.id === id ? { ...note, isPinned: !note.isPinned } : note
+    )
+    );
+  }
+  
+  const sortedNotes = [...notes].sort((a, b) => {
+    return (b.isPinned === true) - (a.isPinned === true);
+  });
+  
+  // const filteredNotes = notes.filter((note) =>
+  //   note.text.toLowerCase().includes(searchText.toLowerCase())
+  // );
+
   return (
     <div className="app-container">
       <h1 className='app-title'>Notes App</h1>
       <SearchBar handleSearch={setSearchText} />
       <NoteForm onAddNote={addNote} />
-      <NoteList notes={filteredNotes} handleDeleteNote={deleteNote} handleEditNote={editNote}/>
+      <NoteList 
+        notes={sortedNotes} 
+        handleDeleteNote={deleteNote} 
+        handleEditNote={editNote} 
+        handlePinNote={togglePinNote}
+      />
     </div>
   );
 }
