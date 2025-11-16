@@ -16,10 +16,11 @@ function App() {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
-  const addNote = (text) => {
+  const addNote = (text, color) => {
     const newNote = {
       id: uuidv4(),
       text: text,
+      color: color,
       date: new Date().toLocaleDateString()
     };
     setNotes([newNote, ...notes]);
