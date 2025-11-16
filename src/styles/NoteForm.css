@@ -15,6 +15,7 @@
     border-radius: 5px;
     font-size: 16px;
     resize: none;
+    box-sizing: border-box;
     font-family: inherit;
 }
 
@@ -38,4 +39,32 @@
 
 .note-form button:hover {
     background-color: #357ab8;
+}
+
+.color-picker {
+    margin-bottom: 10px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+}
+
+.color-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.color-circle:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+.color-circle.selected {
+    border: 2px solid #000;
 }
