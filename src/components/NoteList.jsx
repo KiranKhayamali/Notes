@@ -1,7 +1,7 @@
 import NoteItem from "./NoteItem";
 import '../styles/NoteList.css';
 
-export default function NoteList({notes, handleDeleteNote}) {
+export default function NoteList({notes, handleDeleteNote, handleEditNote}) {
     return (
         <div className="note-list">
             {notes.map((note) => (
@@ -11,6 +11,7 @@ export default function NoteList({notes, handleDeleteNote}) {
                     text={note.text}
                     date={note.date}
                     handleDeleteNote={handleDeleteNote}
+                    handleEditNote={handleEditNote}
                 />
             ))}
         </div>   
