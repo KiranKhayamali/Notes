@@ -46,6 +46,7 @@
     border: none;
     border-radius: 5px;
     resize: none;
+    box-sizing: border-box;
     margin-bottom: 10px;
     font-family: inherit;
 }
