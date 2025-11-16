@@ -1,3 +1,5 @@
+import '../styles/NoteItem.css';
+
 function NoteItem({ id, text, date, handleDeleteNote }) {
     return (
         <div className="note-item">
