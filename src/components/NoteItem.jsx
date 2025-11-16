@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../styles/NoteItem.css';
 
-function NoteItem({ id, text, date, color, handleDeleteNote, handleEditNote }) {
+function NoteItem({ id, text, date, color, isPinned, handleDeleteNote, handleEditNote, handlePinNote }) {
     const [isEditing, setIsEditing] = useState(false);
     const [editedText, setEditedText] = useState(text);
 
@@ -13,7 +13,7 @@ function NoteItem({ id, text, date, color, handleDeleteNote, handleEditNote }) {
     };
 
     return (
-        <div className="note-item" style={{ backgroundColor: color }}>
+        <div className={`note-item ${isPinned ? 'pinned' : ''}`} style={{ backgroundColor: color }}>
             {isEditing ? (
                 <textarea 
                     className='note-edit-textarea'
@@ -28,6 +28,12 @@ function NoteItem({ id, text, date, color, handleDeleteNote, handleEditNote }) {
                 <small>{date}</small>
 
                 <div className='note-actions'>
+                    <button
+                        className="pin-btn"
+                        onClick={() => handlePinNote(id)}
+                    >
+                        {isPinned ? "Unpin" : "Pin"}
+                    </button>
                     {isEditing ? (
                         <>
                             <button className='save-btn' onClick={handleSaveEdit}>
