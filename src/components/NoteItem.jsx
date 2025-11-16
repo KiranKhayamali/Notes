@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../styles/NoteItem.css';
 
-function NoteItem({ id, text, date, handleDeleteNote, handleEditNote }) {
+function NoteItem({ id, text, date, color, handleDeleteNote, handleEditNote }) {
     const [isEditing, setIsEditing] = useState(false);
     const [editedText, setEditedText] = useState(text);
 
@@ -13,7 +13,7 @@ function NoteItem({ id, text, date, handleDeleteNote, handleEditNote }) {
     };
 
     return (
-        <div className="note-item">
+        <div className="note-item" style={{ backgroundColor: color }}>
             {isEditing ? (
                 <textarea 
                     className='note-edit-textarea'
