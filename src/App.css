@@ -22,7 +22,22 @@
 .theme-toggle-btn:hover{
   color: #007BFF;
 }
-body.dark-mode{
-  background-color: #121212;
-  color: #e0e0e0;
+/* Theme button variations */
+.theme-toggle-btn.light{
+  background-color: #fff3bf; /* soft yellow */
+  color: #333;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.theme-toggle-btn.dark{
+  background-color: #374151; /* slate gray */
+  color: #fff;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+/* Header color adjustments when html.dark is set by ThemeContext */
+html.dark .app-header{
+  color: #e4e4e7;
 }
