@@ -10,3 +10,19 @@
   margin-bottom: 40px;
   color: #333;
 }
+
+.theme-toggle-btn{
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.theme-toggle-btn:hover{
+  color: #007BFF;
+}
+body.dark-mode{
+  background-color: #121212;
+  color: #e0e0e0;
+}
