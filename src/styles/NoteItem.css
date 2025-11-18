@@ -53,48 +53,94 @@
 
 .note-actions button {
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 8px 12px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
     margin-right: 5px;
+    background-color: transparent;
+    color: #4a4a4a;
+}
+
+html.dark .note-actions button {
+    color: #b0b0b0;
+}
+
+.note-actions button:hover {
+    background-color: #f0f0f0;
+}
+
+html.dark .note-actions button:hover {
+    background-color: #2d2d2d;
 }
 
 .edit-btn {
-    background-color: #4a90e2;
-    color: white;
+    background-color: transparent;
+    color: #4a90e2;
+}
+
+html.dark .edit-btn {
+    color: #6bb6ff;
 }
 
 .edit-btn:hover {
-    background-color: #357ab7;
+    background-color: #f0f8ff;
+}
+
+html.dark .edit-btn:hover {
+    background-color: #1a2a3a;
 }
 
 .save-btn {
-    background-color: #52c41a;
-    color: white;
+    background-color: transparent;
+    color: #52c41a;
+}
+
+html.dark .save-btn {
+    color: #85de64;
 }
 
 .save-btn:hover {
-    background-color: #389e0d;
+    background-color: #f0fff0;
+}
+
+html.dark .save-btn:hover {
+    background-color: #1a2d0f;
 }
 
 .cancel-btn {
-    background-color: #faad14;
-    color: white;
+    background-color: transparent;
+    color: #faad14;
+}
+
+html.dark .cancel-btn {
+    color: #ffc53d;
 }
 
 .cancel-btn:hover {
-    background-color: #d48806;
+    background-color: #fffbe6;
+}
+
+html.dark .cancel-btn:hover {
+    background-color: #2d2410;
 }
 
 .delete-btn {
-    background-color: #ff4d4f;
-    color: white;
+    background-color: transparent;
+    color: #ff4d4f;
+}
+
+html.dark .delete-btn {
+    color: #ff7875;
 }
 
 .delete-btn:hover {
-    background-color: #d9363e;
+    background-color: #fff0f0;
+}
+
+html.dark .delete-btn:hover {
+    background-color: #2d0f0f;
 }
 
 .pin-btn {
