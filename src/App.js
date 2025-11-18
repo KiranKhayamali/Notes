@@ -58,6 +58,16 @@ function AppContent() {
   //   note.text.toLowerCase().includes(searchText.toLowerCase())
   // );
 
+  const reorderedNotes = (result) => {
+    if (!result.destination) return;
+
+    const items = Array.from(sortedNotes);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+    
+    setNotes(items);
+  };
+
   return (
     <div className="app-container">
         <div className="app-header">
@@ -77,6 +87,7 @@ function AppContent() {
         handleDeleteNote={deleteNote} 
         handleEditNote={editNote} 
         handlePinNote={togglePinNote}
+        handleRecorder={reorderedNotes}
       />
     </div>
   );
