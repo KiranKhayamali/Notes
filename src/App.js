@@ -1,16 +1,19 @@
-import { useState, useEffect, use } from 'react';
+import { useState, useEffect} from 'react';
 import {v4 as uuidv4} from 'uuid';
+import {Sun, Moon} from 'lucide-react';
 import NoteList from './components/NoteList';
 import NoteForm from './components/NoteForm';
 import SearchBar from './components/SearchBar';
+import { ThemeProvider, useTheme } from './components/ThemeContext';
 import './App.css';
 
-function App() {
+function AppContent() {
   const [notes, setNotes] = useState(() => {
     const savedNotes = localStorage.getItem("notes");
     return savedNotes ? JSON.parse(savedNotes) : [];
   });
   const [searchText, setSearchText] = useState("");
+  const { dark, toggleDarkMode } = useTheme();
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
@@ -57,7 +60,15 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1 className='app-title'>Notes App</h1>
+      <div className="app-header">
+        <h1 className='app-title'>Notes App</h1>
+        <button 
+          className='theme-toggle-btn' 
+          onClick={() => toggleDarkMode()}
+        >
+          {dark ? <Sun size={20}/> : <Moon size={20}/>}
+        </button>
+      </div>
       <SearchBar handleSearch={setSearchText} />
       <NoteForm onAddNote={addNote} />
       <NoteList 
@@ -67,6 +78,14 @@ function App() {
         handlePinNote={togglePinNote}
       />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 
