@@ -60,15 +60,16 @@ function AppContent() {
 
   return (
     <div className="app-container">
-      <div className="app-header">
-        <h1 className='app-title'>Notes App</h1>
-        <button 
-          className='theme-toggle-btn' 
-          onClick={() => toggleDarkMode()}
-        >
-          {dark ? <Sun size={20}/> : <Moon size={20}/>}
-        </button>
-      </div>
+        <div className="app-header">
+          <h1 className='app-title'>{dark ? 'Notes App' : 'Notes App'}</h1>
+          <button
+            className={`theme-toggle-btn ${dark ? 'dark' : 'light'}`}
+            onClick={() => toggleDarkMode()}
+            aria-label="Toggle theme"
+          >
+            {dark ? <Sun size={20}/> : <Moon size={20}/>}
+          </button>
+        </div>
       <SearchBar handleSearch={setSearchText} />
       <NoteForm onAddNote={addNote} />
       <NoteList 
