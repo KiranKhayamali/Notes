@@ -3,3 +3,25 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
+
+.draggable-item.dragging {
+  transform: rotate(2deg);
+  transition: 0.2s;
+  opacity: 0.8;
+}
+
+.draggable-item {
+  transition: all 0.2s ease;
+}
+
+.draggable-item:hover {
+  cursor: grab;
+}
+
+.note-list-empty {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
