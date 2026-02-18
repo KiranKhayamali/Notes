@@ -1,7 +1,15 @@
 .note-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    column-count: auto;
+    column-width: 240px;
+    column-gap: 16px;
+    padding: 16px;
+}
+
+.note-list > * {
+    break-inside: avoid;
+    margin-bottom: 16px;
+    display: inline-block;
+    width: 100%;
 }
 
 .draggable-item.dragging {
