@@ -50,13 +50,14 @@ function AppContent() {
     );
   }
   
-  const sortedNotes = [...notes].sort((a, b) => {
-    return (b.isPinned === true) - (a.isPinned === true);
-  });
-  
-  // const filteredNotes = notes.filter((note) =>
-  //   note.text.toLowerCase().includes(searchText.toLowerCase())
-  // );
+  const filteredNotes = notes.filter((note) =>
+  note.text.toLowerCase().includes(searchText.toLowerCase())
+);
+
+const sortedNotes = [...filteredNotes].sort((a, b) => {
+  return (b.isPinned === true) - (a.isPinned === true);
+});
+
 
   const reorderedNotes = (result) => {
     if (!result.destination) return;
